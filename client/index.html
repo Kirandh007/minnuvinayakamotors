@@ -3,14 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Sri Vinayaka Motors live city bus tracking, ticket booking, QR passes, and admin platform concept."
-    />
-    <title>Sri Vinayaka Motors | Live City Bus Platform</title>
+    <meta name="description" content="Sri Vinayaka Motors city bus ticket booking and route platform." />
+    <title>Sri Vinayaka Motors | Book Tickets Now</title>
+    <style>
+      :root{font-family:Inter,system-ui,Segoe UI,sans-serif;color:#071726;background:#f5f8fb}*{box-sizing:border-box}body{margin:0}a{text-decoration:none;color:inherit}.urgent{position:sticky;top:0;z-index:20;display:flex;gap:12px;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;color:white;background:linear-gradient(90deg,#b60000,#ff1f1f,#b60000);border-bottom:3px solid #fff000;font-weight:950;text-transform:uppercase;animation:blink 1s ease-in-out infinite}.urgent strong{color:#fff000;font-size:20px}header{position:sticky;top:44px;z-index:10;display:flex;align-items:center;gap:14px;padding:16px clamp(18px,5vw,64px);background:rgba(255,255,255,.94);border-bottom:1px solid #dce5ef;backdrop-filter:blur(14px)}.logo{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#ffc928;font-size:24px}header strong{font-size:20px;margin-right:auto}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border:0;border-radius:8px;background:#ffc928;color:#071726;font-weight:950}.hero{min-height:640px;display:grid;align-items:center;padding:80px clamp(18px,6vw,80px);color:white;background:linear-gradient(105deg,rgba(3,15,28,.97),rgba(3,33,60,.82)),radial-gradient(circle at 72% 35%,#2bb7ff55,transparent 36%),#071726}.eyebrow{color:#ffc928;font-size:13px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.hero h1{max-width:980px;margin:8px 0 12px;font-size:clamp(48px,9vw,108px);line-height:.95}.hero h2{margin:0 0 30px;font-size:clamp(28px,5vw,58px);color:#dbeaf7}.booking{display:grid;grid-template-columns:420px 1fr;gap:20px;width:min(1200px,calc(100% - 32px));margin:70px auto}.panel,.map,.cards article{background:white;border:1px solid #dce5ef;border-radius:10px;box-shadow:0 18px 46px #07172618}.panel{display:grid;gap:14px;padding:22px}.panel h2{margin:0;font-size:30px}.prices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.prices b{padding:14px;border-radius:8px;background:#071726;color:white}.prices b:last-child{background:#ffc928;color:#071726}button,input,select{font:inherit}button{min-height:46px;border:0;border-radius:8px;font-weight:950;cursor:pointer}button:not(.primary){background:#eaf5ff;color:#092541;border:1px solid #cce2f5}.primary{background:#ffc928!important;color:#071726!important}.secondary{background:#fff4cc!important;color:#071726!important;border:1px solid #ffe189!important}label{display:grid;gap:8px;color:#64758b;font-weight:900}input,select{width:100%;min-height:48px;padding:0 12px;border:1px solid #dce5ef;border-radius:8px;background:#f6f9fc;color:#071726}.map{min-height:520px;display:grid;place-items:center;text-align:center;background:linear-gradient(#eaf5ff,#fff)}.map span{font-weight:950;color:#006fba}.map strong{font-size:34px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:min(1200px,calc(100% - 32px));margin:0 auto 70px}.cards article{padding:24px}.cards h3{margin-top:0}@keyframes blink{50%{filter:brightness(1.35);box-shadow:0 0 0 4px #fff00040}}@media(max-width:760px){.urgent{flex-direction:column;gap:2px;line-height:1.15}.urgent span{font-size:11px}header{top:62px}.booking,.cards{grid-template-columns:1fr}.prices{grid-template-columns:1fr}.hero{min-height:560px}.hero h1{font-size:50px}}
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <a class="urgent" href="#book"><span>HURRY UP</span><strong>BOOK NOW</strong><span>Rs. 19 per trip / Rs. 79 unlimited day pass</span></a>
+    <header>
+      <div class="logo">🚌</div>
+      <strong>Sri Vinayaka Motors</strong>
+      <a class="btn" href="#book">Book now</a>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Davangere and Bhadravathi City Bus Operator</p>
+          <h1>SRI VINAYAKA MOTORS</h1>
+          <h2>BOOK TICKETS NOW</h2>
+          <a class="btn" href="#book">Book now</a>
+        </div>
+      </section>
+      <section id="book" class="booking">
+        <div class="panel">
+          <h2>Book Your City Bus Ticket</h2>
+          <div class="prices"><b>Per trip Rs. 19</b><b>Unlimited day pass Rs. 79</b></div>
+          <button id="detect">Detect my location</button>
+          <p id="status">Location not detected</p>
+          <label>From<input id="from" readonly value="Auto detect customer location" /></label>
+          <label>To<select><option>City Bus Stand</option><option>Railway Station</option><option>Kunduvada Lake</option><option>Paper Town</option></select></label>
+          <label>Route<select><option>Route 9</option><option>Route 15</option><option>Route 18</option><option>Route 27</option></select></label>
+          <button class="primary">Book now - Trip Rs. 19</button>
+          <button class="secondary">Buy unlimited day pass Rs. 79</button>
+        </div>
+        <div class="map"><div><span>Live Route Map</span><br /><strong>Routes 9 / 15 / 18 / 27</strong></div></div>
+      </section>
+      <section class="cards">
+        <article><h3>35+ Years Experience</h3><p>Trusted city bus service by Harish M N.</p></article>
+        <article><h3>QR Ticket</h3><p>Digital ticket and pass validation ready.</p></article>
+        <article><h3>Contact</h3><p>99027 99999 / vinayakamotors@gmail.com</p></article>
+      </section>
+    </main>
+    <script>
+      document.getElementById('detect').addEventListener('click', function () {
+        const status = document.getElementById('status');
+        const from = document.getElementById('from');
+        if (!navigator.geolocation) {
+          status.textContent = 'Location permission is not available in this browser';
+          return;
+        }
+        status.textContent = 'Requesting location permission...';
+        navigator.geolocation.getCurrentPosition(function (position) {
+          const point = position.coords.latitude.toFixed(5) + ', ' + position.coords.longitude.toFixed(5);
+          status.textContent = 'Detected: ' + point;
+          from.value = 'My location - ' + point;
+        }, function () {
+          status.textContent = 'Please allow location permission to auto detect pickup';
+        });
+      });
+    </script>
   </body>
 </html>
